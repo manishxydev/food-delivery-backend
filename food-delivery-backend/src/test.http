@@ -1,0 +1,8 @@
+POST http://localhost:8080/api/restaurants
+Content-Type: application/json
+
+{
+  "name": "Pizza Hub",
+  "address": "MG Road",
+  "ownerId": 1
+}
