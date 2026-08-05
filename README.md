@@ -104,3 +104,7 @@ Authorization: Bearer <token>
 ## Status
 
 Core CRUD and authentication complete. Planned next: role-based authorization (restaurant owners restricted to managing their own restaurants), order status workflow, and API documentation.
+
+git add .
+git commit -m "Add AI order assistant using Gemini function calling"
+git push
