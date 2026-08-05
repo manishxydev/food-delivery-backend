@@ -105,6 +105,31 @@ Authorization: Bearer <token>
 
 Core CRUD and authentication complete. Planned next: role-based authorization (restaurant owners restricted to managing their own restaurants), order status workflow, and API documentation.
 
-git add .
-git commit -m "Add AI order assistant using Gemini function calling"
-git push
+## AI Order Assistant
+
+A conversational AI assistant (`POST /api/chat`, JWT-authenticated) built on
+Google Gemini's function-calling API. Users can browse the menu, place
+orders, and check order status in natural language — the model decides
+which backend service to invoke, and the response is grounded in real
+application logic rather than canned replies.
+
+**How it works:**
+1. The user sends a natural-language message to `/api/chat`.
+2. Gemini is given a set of tool definitions (`searchMenuItems`,
+   `placeOrder`, `getOrderStatus`) describing what the backend can do.
+3. When the model decides a tool is needed, the backend executes the
+   corresponding service method against the real database.
+4. The result is sent back to Gemini, which turns it into a natural
+   language reply — supporting multi-turn conversations (e.g. search →
+   confirm → place order → check status).
+
+**Example:**
+\`\`\`
+POST /api/chat
+Authorization: Bearer <jwt>
+Content-Type: application/json
+
+{ "message": "Show me some spicy vegetarian options under 200 rupees" }
+\`\`\`
+
+**Tech:** Spring Boot, Google Gemini API (function calling), JWT auth
