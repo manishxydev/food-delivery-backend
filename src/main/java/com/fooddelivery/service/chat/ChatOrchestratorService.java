@@ -48,7 +48,7 @@ public class ChatOrchestratorService {
             // Echo back exactly what the model sent (preserves id, thought signatures, etc.)
             history.add(candidateContent);
 
-            JsonNode toolResult = chatTools.executeTool(toolName, args);
+            JsonNode toolResult = chatTools.executeTool(toolName, args , userId);
             history.add(functionResponseTurn(toolName, toolResult, callId));
         }
 
