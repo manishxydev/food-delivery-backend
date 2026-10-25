@@ -28,3 +28,107 @@ Content-Type: application/json
   "password": "Test@1234",
   "role": "CUSTOMER"
 }
+
+### Create Restaurant 1
+POST ://localhost:8080/api/restaurants
+Content-Type: application/json
+
+{
+  "name": "Spice Junction",
+  "address": "MG Road, Jamshedpur",
+  "ownerId": 1
+}
+
+### Create Restaurant 2
+POST http://localhost:8080/api/restaurants
+Content-Type: application/json
+
+{
+  "name": "Pizza Corner",
+  "address": "Sakchi, Jamshedpur",
+  "ownerId": 1
+}
+
+### Menu Item 1 - Spice Junction
+POST http://localhost:8080/api/menu-items
+Content-Type: application/json
+
+{
+  "name": "Paneer Butter Masala",
+  "description": "Creamy tomato-based curry with soft paneer cubes",
+  "price": 220,
+  "restaurantId": 1,
+  "available": true
+}
+
+### Menu Item 2 - Spice Junction
+POST http://localhost:8080/api/menu-items
+Content-Type: application/json
+
+{
+  "name": "Chicken Biryani",
+  "description": "Aromatic basmati rice layered with spiced chicken",
+  "price": 260,
+  "restaurantId": 1,
+  "available": true
+}
+
+### Menu Item 3 - Spice Junction
+POST http://localhost:8080/api/menu-items
+Content-Type: application/json
+
+{
+  "name": "Veg Spring Rolls",
+  "description": "Crispy fried rolls stuffed with mixed vegetables",
+  "price": 150,
+  "restaurantId": 1,
+  "available": true
+}
+
+### Menu Item 4 - Spice Junction
+POST http://localhost:8080/api/menu-items
+Content-Type: application/json
+
+{
+  "name": "Masala Dosa",
+  "description": "Crispy rice crepe filled with spiced potato filling",
+  "price": 120,
+  "restaurantId": 1,
+  "available": true
+}
+
+### Menu Item 5 - Pizza Corner
+POST http://localhost:8080/api/menu-items
+Content-Type: application/json
+
+{
+  "name": "Margherita Pizza",
+  "description": "Classic pizza with mozzarella, tomato, and basil",
+  "price": 250,
+  "restaurantId": 2,
+  "available": true
+}
+
+### Menu Item 6 - Pizza Corner
+POST http://localhost:8080/api/menu-items
+Content-Type: application/json
+
+{
+  "name": "Farmhouse Pizza",
+  "description": "Loaded with capsicum, onion, tomato, and corn",
+  "price": 320,
+  "restaurantId": 2,
+  "available": true
+}
+
+### Menu Item 7 - Pizza Corner
+POST http://localhost:8080/api/menu-items
+Content-Type: application/json
+
+{
+  "name": "Garlic Breadsticks",
+  "description": "Oven-baked breadsticks brushed with garlic butter",
+  "price": 130,
+  "restaurantId": 2,
+  "available": true
+}
